@@ -27,8 +27,15 @@ const ItemModel: ItemInt[] = [
 
 ];
 
+
+
 function Table() {
     const [Item, setItem] = useState(ItemModel.concat())
+    function getTotalPrice() {
+        let tmpResult = 0; Item.map(i =>
+            (tmpResult += i.itemsAmount * i.prisePerOneItem));
+        return tmpResult
+    }
     const IncreaseButton = (itemForIncrement: number) => {
         ItemModel[itemForIncrement].itemsAmount++;
         setItem(ItemModel.concat())
@@ -55,10 +62,10 @@ function Table() {
         </b>
                 </div>
             </div>
-            <TableBody Items={Item} Increase={IncreaseButton} Decrease={DecreaseButton}/>
+            <TableBody Items={Item} Increase={IncreaseButton} Decrease={DecreaseButton} />
 
             <div className="footer">
-                <b> Сумма: 1300 руб.</b>
+                Сумма: <b>{getTotalPrice()}</b>
             </div>
         </div>
     );
