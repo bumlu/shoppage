@@ -28,14 +28,14 @@ const ItemModel: ItemInt[] = [
 ];
 
 function Table() {
-    const [Item, setItem] = useState((Object.assign ({},ItemModel)))
+    const [Item, setItem] = useState(ItemModel)
     const IncreaseButton = (itemForIncrement: number) => {
         ItemModel[itemForIncrement].itemsAmount++;
-        setItem(Object.assign ({},ItemModel))
+        setItem(ItemModel)
     };
     const DecreaseButton = (itemForDecrement: number) => {
         ItemModel[itemForDecrement].itemsAmount--;
-        setItem(Object.assign ({},ItemModel))
+        setItem(ItemModel)
     };
     return (
         <div className="table">
