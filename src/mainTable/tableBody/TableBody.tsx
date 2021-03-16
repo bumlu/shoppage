@@ -10,6 +10,7 @@ interface TableBodyProps{
  };
 
 function TableBody (props: TableBodyProps ){
+    
     return(
         <div className="body">
       <TitleRow></TitleRow>

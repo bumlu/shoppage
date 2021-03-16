@@ -25,6 +25,7 @@ function Table(props:TableProps) {
         setItem(props.ItemModel.concat())
     };
    
+    console.log(Item);
 
     return (
         <div className="table">

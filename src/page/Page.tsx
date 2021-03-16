@@ -27,20 +27,22 @@ const ItemModel: ItemInt[] = [
 
 ];
 
-let tmpItemForDelete:number;
+let indexItemForDelete:number;
 
 const ModalDeleteButton = (itemForDelete: number) =>{
-    tmpItemForDelete=itemForDelete
+    indexItemForDelete=itemForDelete -1
 }
 
-function DeleteItem (){
-ItemModel.splice(tmpItemForDelete)
+const  DeleteItem=()=>{
+ItemModel.splice(indexItemForDelete)
 }
 
 function Page (){
+    
     return (
    <div> <Table  ItemModel={ItemModel} ModalDeleteButton={ModalDeleteButton}/> 
     <ModalDelete DeleteItem={DeleteItem}/>
+    
     </div>
     )
 }

@@ -21,7 +21,7 @@ function ItemRow(props: ItemRowProps) {
             <span>{props.Item.itemName}</span>
             <span> {props.Item.itemsAmount} </span>
             <span> {props.Item.prisePerOneItem} </span>
-            <span><button className={" minus " + (block)} onClick={Decrease}>-</button>  <button onClick={Increase}>+</button>    </span>
+            <span><button className={" minus " + (block)} onClick={Decrease}>-</button>  <button onClick={Increase}>+</button> </span>
             <span>  <button onClick={ModalCall}>x</button> </span>
         </div>
     )

@@ -1,8 +1,9 @@
 .pageView {
-    background-color: rgba(0, 0, 0, 0.247);
+    background-color: rgba(110, 109, 109, 0.164);
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 60%;
+}
+.button {
+position: center;
 }
