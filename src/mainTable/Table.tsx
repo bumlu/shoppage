@@ -1,49 +1,31 @@
 import { useState } from "react";
 import { ItemInt } from "../interface/ItemInt";
+import ModalDelete from "../modalDelete/ModalDelete";
 import "./Table.css";
 import TableBody from "./tableBody/TableBody";
 
+interface TableProps {
+    ItemModel:ItemInt[] 
+    ModalDeleteButton:(itemForDelete:number)=>void
+}
 
-const ItemModel: ItemInt[] = [
-    {
-        itemsNumber: 1,
-        itemName: "Носки",
-        itemsAmount: 3,
-        prisePerOneItem: 55
-    },
-    {
-        itemsNumber: 2,
-        itemName: "Пижама для продолжительного сна",
-        itemsAmount: 1,
-        prisePerOneItem: 1399
-    },
-
-    {
-        itemsNumber: 3,
-        itemName: "Велошлем",
-        itemsAmount: 1,
-        prisePerOneItem: 6600
-    }
-
-];
-
-
-
-function Table() {
-    const [Item, setItem] = useState(ItemModel.concat())
+function Table(props:TableProps) {
+    const [Item, setItem] = useState(props.ItemModel.concat())
     function getTotalPrice() {
         let tmpResult = 0; Item.map(i =>
             (tmpResult += i.itemsAmount * i.prisePerOneItem));
         return tmpResult
     }
     const IncreaseButton = (itemForIncrement: number) => {
-        ItemModel[itemForIncrement].itemsAmount++;
-        setItem(ItemModel.concat())
+        props.ItemModel[itemForIncrement].itemsAmount++;
+        setItem(props.ItemModel.concat())
     };
     const DecreaseButton = (itemForDecrement: number) => {
-        ItemModel[itemForDecrement].itemsAmount--;
-        setItem(ItemModel.concat())
+        props.ItemModel[itemForDecrement].itemsAmount--;
+        setItem(props.ItemModel.concat())
     };
+   
+
     return (
         <div className="table">
             <div className="header">
@@ -62,7 +44,7 @@ function Table() {
         </b>
                 </div>
             </div>
-            <TableBody Items={Item} Increase={IncreaseButton} Decrease={DecreaseButton} />
+            <TableBody Items={Item} Increase={IncreaseButton} Decrease={DecreaseButton} ModalCall={props.ModalDeleteButton} />
 
             <div className="footer">
                 Сумма: <b>{getTotalPrice()}</b>

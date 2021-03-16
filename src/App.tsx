@@ -1,9 +1,9 @@
 import React from "react";
-import Table from "./mainTable/Table"
+import Page from "./page/Page"
 
 function App() {
   return (
-  <Table/>
+  <Page/>
   );
 }
 
