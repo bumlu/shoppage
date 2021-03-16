@@ -1,0 +1,41 @@
+.header{
+    color: rgb(37, 37, 37);
+    font-size: 1.5em;
+    font-weight: 400;
+    padding-bottom: 1em;
+    
+  }
+  
+  .order-details {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .title-row {
+    margin-top: 3em;
+    
+  }
+  
+  .body {
+    
+     font-size: 1.5em;
+    font-weight: 400;
+    padding-bottom: 1em;
+    
+  }
+   
+   .pageline {
+    display: grid;
+    grid-template-columns: 20px 280px 110px 150px 100px 70px;
+    border-bottom: 1px solid grey;
+   }
+  
+   .table {
+    width: 730px;
+    background-color: rgb(157, 172, 151);
+    margin: 0 auto;
+   }
+  .pageline span {
+  border-right: 1px solid grey;
+  padding-left: 2px;
+  }

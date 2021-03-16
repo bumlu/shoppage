@@ -12,8 +12,8 @@ let block: string;
 
 function ItemRow(props: ItemRowProps) {
     function Increase() { props.Increase(props.Item.itemsNumber - 1) }
-    function Decrease() { if (props.Item.itemsAmount > 1) props.Decrease(props.Item.itemsNumber - 1) }
-    function ModalCall() {props.ModalCall(props.Item.itemsNumber)}
+    function Decrease() { if (props.Item.itemsAmount > 1) props.Decrease(props.Item.itemsNumber -1) }
+    function ModalCall() {props.ModalCall(props.Item.itemsNumber -1)}
     if (props.Item.itemsAmount > 1) { block = "" } else { block = "block" };
     return (
         <div className="name pageline" >
